@@ -13,6 +13,8 @@ $requests = [
     'news' => "controllers/core/front-end/news.php",
     'projects' => "controllers/core/front-end/projects.php",
 
+    'courses' => "controllers/core/front-end/course.php",
+
 
 
     // 'admin' => "controllers/core/back-end/admin.php",
