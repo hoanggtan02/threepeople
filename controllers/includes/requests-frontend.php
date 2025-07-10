@@ -1,5 +1,6 @@
 <?php
-if (!defined('ECLO')) die("Hacking attempt");
+if (!defined('ECLO'))
+    die("Hacking attempt");
 $requests = [
     'home' => "controllers/core/front-end/home.php",
     'consultation' => "controllers/core/front-end/consultation.php",
@@ -12,6 +13,8 @@ $requests = [
 
     'news' => "controllers/core/front-end/news.php",
     'projects' => "controllers/core/front-end/projects.php",
+    'activate' => "controllers/core/front-end/activate.php",
+
 
     'courses' => "controllers/core/front-end/course.php",
 
@@ -25,6 +28,6 @@ $requests = [
 foreach ($requests as $key => $controller) {
     $setRequest[] = [
         "key" => $key,
-        "controllers" =>  $controller,
+        "controllers" => $controller,
     ];
 }
