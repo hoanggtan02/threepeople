@@ -1,0 +1,171 @@
+<!--====== OFFER PART START ======-->
+
+<section class="offer-area bg_cover pt-110 pb-120" style="margin-bottom: 0 !important;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-11">
+                <div class="offer-content text-center">
+                    <h2 class="title">Tự học - Tự tư duy - Mỗi Ngày Một Tiến Bộ!</h2>
+                    <span>Nền tảng học Toán cho trẻ từ 4-11 tuổi --- tự học, cá nhân hóa, hiệu quả</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="container">
+    <ul class="nav margin-tab custom-tabs row d-flex justify-content-around">
+        <li class="nav-item col-3" role="presentation">
+            <a class="nav-link active w-100 text-center" href="#">Thống kê</a>
+        </li>
+        <li class="nav-item col-3 " role="presentation">
+            <a class="nav-link w-100 text-center" href="#">Điểm</a>
+        </li>
+        <li class="nav-item col-3" role="presentation">
+            <a class="nav-link w-100 text-center" href="#">Tiến triển</a>
+        </li>
+        <li class="nav-item col-3" role="presentation">
+            <a class="nav-link w-100 text-center" href="#">Kết quả</a>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+<!-- Content Section -->
+<section class="container py-5">
+    <!-- Dropdown -->
+<div class="dropdown dropdown-refined" style="margin-left: 100px; ">
+        <button
+            class="btn dropdown-toggle" 
+            style="color: #654100;"
+            type="button" 
+            id="classDropdown" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false">
+            Lựa chọn lớp học
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="classDropdown" style="z-index: auto">
+            <li>
+                <a class="dropdown-item active" href="#" >
+                    <span style="color: #654100;">Lớp Tiền Mầm non</span>
+                    <i class="bi bi-check-lg check-icon"></i>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <span style="color: #654100;">Lớp Mầm non</span>
+                    <i class="bi bi-check-lg check-icon"></i>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <span style="color: #654100;">Lớp 1</span>
+                    <i class="bi bi-check-lg check-icon"></i>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="mt-4">
+        <div class="chart-component d-flex justify-content-center">
+            <div class="chart-container">
+                <canvas id="progressDonutChart"></canvas>
+                <div id="chart-center-text" class="center-text"></div>
+            </div>
+            <div id="chart-legend" class="legend-container"></div>
+        </div>
+    </div>
+
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // 1. Dữ liệu đầu vào (cần đảm bảo tổng là 100)
+        const hardcodedData = {
+            thanhThao: 14,
+            thanhThaoTP: 5,
+            thucHanh: 11,
+            chuaThucHanh: 70 // Đã sửa để tổng = 100
+        };
+
+        // 2. Tự động tính toán tiến trình
+        const totalProgress = hardcodedData.thanhThao + hardcodedData.thucHanh;
+
+        // 3. Chuẩn bị dữ liệu và màu sắc cho biểu đồ
+        // SỬA LỖI: Đảm bảo mảng có đủ 4 giá trị và 4 màu tương ứng
+        const chartValues = [
+            hardcodedData.thanhThao,
+            hardcodedData.thanhThaoTP,
+            hardcodedData.thucHanh,
+            hardcodedData.chuaThucHanh
+        ];
+        const chartColors = [
+            '#9ACD32', // Màu cho Thành thạo
+            '#40E0D0', // Màu cho Thành thạo thành phần
+            '#00BFFF', // Màu cho Thực hành
+            '#f0f0f0'  // Màu cho Chưa thực hành
+        ];
+
+        // 4. Khởi tạo biểu đồ
+        const ctx = document.getElementById('progressDonutChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                // SỬA LỖI: Không cần labels ở đây vì chúng ta dùng chú giải riêng
+                datasets: [{
+                    data: chartValues,
+                    backgroundColor: chartColors,
+                    borderWidth: 1,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '75%',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                }
+            }
+        });
+
+        // 5. Tự động tạo chú giải (Legend)
+        const legendContainer = document.getElementById('chart-legend');
+        const legendItems = [
+            { label: 'Thành thạo', value: hardcodedData.thanhThao, color: '#9ACD32' },
+            { label: 'Thành thạo thành phần', value: hardcodedData.thanhThaoTP, color: '#40E0D0' },
+            { label: 'Thực hành', value: hardcodedData.thucHanh, color: '#00BFFF' },
+            { label: 'Chưa thực hành', value: hardcodedData.chuaThucHanh, color: '#f0f0f0', border: '1px solid #ccc' }
+        ];
+
+        legendContainer.innerHTML = ''; // Xóa chú giải cũ nếu có
+        legendItems.forEach(item => {
+            const borderStyle = item.border ? `border: ${item.border};` : '';
+            legendContainer.innerHTML += `
+                <div class="legend-item">
+                    <div class="legend-color-box" style="background-color: ${item.color}; ${borderStyle}"></div>
+                    <span>${item.value}% ${item.label}</span>
+                </div>
+            `;
+        });
+
+        // 6. Cập nhật chữ ở giữa biểu đồ
+        const centerTextContainer = document.getElementById('chart-center-text');
+        centerTextContainer.innerHTML = `
+            <span class="label">Tiến trình:</span>
+            <span class="percentage">${totalProgress}%</span>
+        `;
+    });
+</script>

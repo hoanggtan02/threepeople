@@ -8,7 +8,7 @@ $requests = [
 
     'library' => "controllers/core/front-end/library.php",
 
-    'services' => "controllers/core/front-end/services.php",
+    'dashboard' => "controllers/core/front-end/dashboard.php",
     'services-detail' => "controllers/core/front-end/services-detail.php",
 
     'news' => "controllers/core/front-end/news.php",
@@ -17,8 +17,8 @@ $requests = [
 
 
     'courses' => "controllers/core/front-end/course.php",
-
-
+    'parent-profile' => "controllers/core/front-end/parent-profile.php",
+    'point' => "controllers/core/front-end/point.php",
 
     // 'admin' => "controllers/core/back-end/admin.php",
     // 'main' => "controllers/core/back-end/main.php",
