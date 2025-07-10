@@ -1,0 +1,199 @@
+.register-modal .modal-dialog {
+    max-width: 550px;
+}
+
+.register-modal .modal-content {
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-clip: border-box;
+}
+
+.register-modal .modal-body {
+    padding: 0;
+}
+
+.register-modal .form-close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    background-color: #fde68a;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    font-size: 20px;
+    color: #8c6b3e;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.register-modal .form-close-btn:hover {
+    opacity: 0.9;
+}
+
+.register-modal .register-header {
+    background-color: #fff4d8;
+    padding: 20px 30px 20px 140px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    position: relative;
+}
+
+.register-modal .header-title {
+    font-family: 'Nunito', sans-serif;
+    color: #3e312a;
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.register-modal .header-bear-icon {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: white;
+    border: 4px solid #fff4d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.register-modal .header-bear-icon img {
+    width: 100%;
+    height: auto;
+}
+
+.register-modal .register-body {
+    padding: 30px 40px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.register-modal .form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.register-modal .form-section-title h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #555;
+    white-space: nowrap;
+}
+
+
+.register-modal .register-input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ced4da;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.register-modal .register-input:focus {
+    outline: none;
+    border-color: #ff7e5f;
+    box-shadow: 0 0 0 2px rgba(255, 126, 95, 0.25);
+}
+
+.register-modal .checkbox-groups {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.register-modal .form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.register-modal .form-check label {
+    font-size: 14px;
+    color: #555;
+}
+
+.register-modal .form-notice {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #666;
+}
+
+.register-modal .form-notice p {
+    margin: 5px 0;
+    color: black;
+}
+
+.register-modal .form-notice a {
+    color: #ff7e5f;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.register-modal .register-btn-wrapper {
+    padding: 10px 40px 40px 40px;
+    text-align: center;
+}
+
+.register-modal .register-btn {
+    background-color: #ff7e5f;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+}
+
+.register-modal .register-btn:hover {
+    background-color: #e66a50;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .register-modal .register-header {
+        padding: 20px 20px 20px 110px;
+    }
+
+    .register-modal .header-bear-icon {
+        width: 75px;
+        height: 75px;
+        left: 15px;
+    }
+
+    .register-modal .header-title {
+        font-size: 22px;
+    }
+
+    .register-modal .register-body {
+        padding: 20px;
+    }
+
+    .register-modal .checkbox-groups {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

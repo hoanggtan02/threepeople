@@ -58,6 +58,10 @@
 
     <link rel="stylesheet" href="<?=$setting['template']?>/assets-frontend/css/login.css">
 
+    <link rel="stylesheet" href="<?=$setting['template']?>/assets-frontend/css/register.css">
+
+    <link rel="stylesheet" href="<?=$setting['template']?>/assets-frontend/css/role.css">
+
     <link rel="stylesheet" href="<?=$setting['template']?>/assets-frontend/css/about.css">
 
     <link rel="stylesheet" href="<?=$setting['template']?>/assets-frontend/css/activate.css">
@@ -132,10 +136,17 @@
                                     </ul>
                                     <ul class="navbar-nav ml-auto" style="display: flex; align-items: center;">
                                         <li class="nav-item">
-                                            <a class="page-scroll" href="/login" style="color: #654100">Đăng nhập</a>
+                                            <a type="button" class="page-scroll" data-action="modal" data-url="/login"
+                                                data-bs-toggle="modal" data-bs-target=".modal-load">
+                                                Đăng nhập
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="page-scroll" href="/login" style="color: #654100;">Đăng ký</a>
+                                            <a type="button" class="page-scroll" data-action="modal"
+                                                data-url="/register" data-bs-toggle="modal"
+                                                data-bs-target=".modal-load">
+                                                Đăng ký
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>

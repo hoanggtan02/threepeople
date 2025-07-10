@@ -151,3 +151,18 @@ $app->router("/event-services", 'GET', function($vars) use ($app, $jatbi, $setti
 $app->router("/services-detail", 'GET', function($vars) use ($app, $jatbi, $setting) {
     echo $app->render('templates/dhv/services-detail.html', $vars);
 });
+
+$app->router("/login", 'GET', function($vars) use ($app, $jatbi, $setting) {
+
+    echo $app->render('templates/dhv/login-post.html', $vars, 'global');
+});
+
+$app->router("/register", 'GET', function($vars) use ($app, $jatbi, $setting) {
+
+    echo $app->render('templates/dhv/register-post.html', $vars, 'global');
+});
+
+$app->router("/role", 'GET', function($vars) use ($app, $jatbi, $setting) {
+
+    echo $app->render('templates/dhv/role-post.html', $vars, 'global');
+});

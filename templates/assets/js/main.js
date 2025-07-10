@@ -293,9 +293,6 @@ function swal_appointment(formData, response) {
     });
 }
 
-
-
-
 function swal_error(text) {
   Swal.fire({
     title: 'Error!',
