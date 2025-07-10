@@ -37,6 +37,7 @@
   font-size: 24px;
   font-weight: bold;
     margin-top: 1px;
+  margin-bottom: 0px !important;
 }
 
 /* Màu tương ứng tab */
@@ -440,5 +441,475 @@
     height: 24px;
     font-size: 12px;
     line-height: 24px;
+  }
+}
+
+
+/* detail */
+
+/* Detail Section */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lesson-list {
+  background: #fff3bf;
+  border-radius: 10px;
+  padding: 15px;
+  width: 300px; /* Default width for larger screens */
+}
+
+.lesson-list h3 {
+  background: #f5c518;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.lesson-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.lesson-list li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 100%;
+  font-size: 15px;
+}
+
+.lesson-list li:hover {
+  background-color: #f0e68c;
+}
+
+.lesson-list li {
+  background-color: transparent;
+  font-size: 14px;
+  padding: 10px 8px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+}
+
+.lesson-list li::after {
+  content: "";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 22.5px;
+  height: 22.5px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.lesson-list li.completed::after {
+  content: "\2713";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 22.5px;
+  height: 22.5px;
+  background-color: white;
+  color: black !important;
+  border-radius: 60%;
+  font-size: 18px;
+  border: 1px solid black;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.lesson-content {
+  flex: 1;
+}
+
+.breadcrumb {
+  font-size: 15px;
+  color: red;
+  margin-bottom: 8px;
+  background-color: #fff;
+  padding-left: 0px !important;
+  padding-top: 15px !important;
+}
+
+.breadcrumb a {
+  color: red;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.lesson-content h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.video-placeholderr {
+  height: 400px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.prev-btn,
+.next-btn {
+  background-color: #ff8c69;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 999px 0px 0px 999px;
+  cursor: pointer;
+  width: 160px;
+}
+
+.next-btn {
+  border-radius: 0px 999px 999px 0px;
+}
+
+.comments input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding-left: 40px;
+  position: relative;
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Breakpoint 1: Small phones (≤480px) */
+@media (max-width: 480px) {
+  .main-content {
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .lesson-list {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .lesson-list h3 {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  .lesson-list li {
+    font-size: 13px;
+    padding: 8px 6px;
+  }
+
+  .lesson-list li a {
+    font-size: 14px;
+  }
+
+  .lesson-list li::after,
+  .lesson-list li.completed::after {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+  }
+
+  .lesson-content h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+    padding-top: 10px !important;
+  }
+
+  .video-placeholderr {
+    height: 200px;
+    font-size: 24px;
+    border-radius: 8px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .prev-btn,
+  .next-btn {
+    width: 100%;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 999px;
+  }
+
+  .next-btn {
+    border-radius: 999px;
+  }
+
+  .comments input[type="text"] {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .comment {
+    font-size: 13px;
+    padding-left: 35px;
+  }
+
+  .avatar {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Breakpoint 2: Large phones & vertical tablets (481px–767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .main-content {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .lesson-list {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .lesson-list h3 {
+    font-size: 17px;
+    padding: 9px 11px;
+  }
+
+  .lesson-list li {
+    font-size: 14px;
+    padding: 9px 7px;
+  }
+
+  .lesson-list li a {
+    font-size: 14px;
+  }
+
+  .lesson-list li::after,
+  .lesson-list li.completed::after {
+    width: 21px;
+    height: 21px;
+    font-size: 17px;
+  }
+
+  .lesson-content h2 {
+    font-size: 19px;
+    margin-bottom: 12px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+    padding-top: 12px !important;
+  }
+
+  .video-placeholderr {
+    height: 300px;
+    font-size: 30px;
+    border-radius: 10px;
+  }
+
+  .buttons {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .prev-btn,
+  .next-btn {
+    width: 140px;
+    padding: 9px 18px;
+    font-size: 15px;
+  }
+
+  .comments input[type="text"] {
+    padding: 9px;
+    font-size: 15px;
+  }
+
+  .comment {
+    font-size: 14px;
+    padding-left: 38px;
+  }
+
+  .avatar {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Breakpoint 3: Tablets & small desktops (768px–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .main-content {
+    flex-direction: row;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .lesson-list {
+    width: 250px;
+    padding: 12px;
+  }
+
+  .lesson-list h3 {
+    font-size: 17px;
+  }
+
+  .lesson-list li {
+    font-size: 14px;
+  }
+
+  .lesson-list li a {
+    font-size: 14px;
+  }
+
+  .video-placeholderr {
+    height: 350px;
+    font-size: 35px;
+  }
+
+  .prev-btn,
+  .next-btn {
+    width: 150px;
+    padding: 9px 18px;
+    font-size: 15px;
+  }
+
+  .comments input[type="text"] {
+    padding: 9px;
+  }
+
+  .comment {
+    font-size: 14px;
+  }
+}
+
+/* Breakpoint 4: Large desktops (≥1200px) */
+@media (min-width: 1200px) {
+  .main-content {
+    padding: 30px;
+    gap: 30px;
+    max-width: 1400px;
+  }
+
+  .lesson-list {
+    width: 350px;
+    padding: 20px;
+  }
+
+  .lesson-list h3 {
+    font-size: 20px;
+    padding: 12px 15px;
+  }
+
+  .lesson-list li {
+    font-size: 15px;
+    padding: 12px 10px;
+  }
+
+  .lesson-list li a {
+    font-size: 16px;
+  }
+
+  .lesson-list li::after,
+  .lesson-list li.completed::after {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+  }
+
+  .lesson-content h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .breadcrumb {
+    font-size: 16px;
+    padding-top: 20px !important;
+  }
+
+  .video-placeholderr {
+    height: 450px;
+    font-size: 45px;
+    border-radius: 14px;
+  }
+
+  .prev-btn,
+  .next-btn {
+    width: 180px;
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+
+  .comments input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .comment {
+    font-size: 15px;
+    padding-left: 45px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
   }
 }
