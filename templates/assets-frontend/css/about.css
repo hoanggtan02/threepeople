@@ -1,8 +1,366 @@
-.section-title {
-  font-size: 36px;
+.parent-title {
+  font-size: 20px;
+  color: black;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  background-color: #ffe9a7;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+
 }
+
+@media (max-width: 480px) {
+  .parent-title {
+    font-size: 16px;
+    padding: 8px 16px;
+    text-align: center;
+  }
+
+  .form-parent {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .offer-area {
+    margin-bottom: 45px !important;
+  }
+
+}
+
+
+.form-parent {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+
+}
+
+.form-custom {
+  border-radius: 16px;
+  /* max-width: 320px;  */
+}
+
+.custom-tabs {
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+  /* gap: 200px;  */
+  padding: 10px 0;
+  background-color: #ff7e5f;
+}
+
+.custom-tabs .nav-item {
+  border: none !important;
+  display: flex;
+
+  justify-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.custom-tabs .nav-link {
+  padding: 12px;
+  border: none !important;
+  /* Xoá viền mặc định Bootstrap */
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #212529;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+  width: 20%;
+}
+
+/* Tab đang được chọn */
+.custom-tabs .nav-link.active {
+  color: white !important;
+  /* Đổi màu chữ thành trắng */
+  background-color: transparent;
+  /* Không đổi màu nền */
+  font-weight: bold;
+}
+
+/* Hover (tuỳ chọn) */
+.custom-tabs .nav-link:hover {
+  color: white !important;
+  /* Đổi màu chữ thành trắng */
+  background-color: transparent;
+  /* Không đổi màu nền */
+}
+
+.margin-tab {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* Media query cho màn hình 480px */
+@media (max-width: 990px) {
+  .custom-tabs {
+    /* gap: 21px;  */
+    padding: 5px;
+  }
+
+  .custom-tabs .nav-link {
+    padding: 6px 12px;
+    /* Giảm padding */
+    font-size: 12px;
+    /* Giảm font-size */
+  }
+
+  .custom-tabs .nav-item {
+    padding-left: 0px;
+    /* Giảm khoảng cách bên trái */
+    padding-right: 0px;
+    /* Giảm khoảng cách bên phải */
+    margin: 0 !important;
+  }
+
+  .margin-tab {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+
+
+
+.custom-tabs .nav-link {
+  color: #654100;
+  font-weight: 600;
+}
+
+.custom-tabs .nav-link.active {
+  color: #fff;
+
+  border-radius: 0.5rem;
+}
+
+.chart-component {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+
+
+}
+
+.chart-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.legend-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1em;
+}
+
+.legend-color-box {
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+.center-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  pointer-events: none;
+}
+
+.center-text .label {
+  font-size: 1em;
+}
+
+.center-text .percentage {
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+
+.dropdown-refined .btn {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  /* Viền xám nhạt mặc định */
+  border-radius: 0.375rem;
+  /* 6px */
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: #495057;
+  box-shadow: none !important;
+  /* Luôn bỏ shadow mặc định */
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Khi di chuột hoặc focus */
+.dropdown-refined .btn:hover,
+.dropdown-refined .btn:focus {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  /* Đổi màu viền khi tương tác */
+}
+
+/* Tùy chỉnh mũi tên (caret) */
+.dropdown-refined .dropdown-toggle::after {
+  transition: transform 0.2s ease;
+}
+
+.dropdown-refined .dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+  /* Xoay mũi tên khi mở */
+}
+
+/* Menu xổ xuống */
+.dropdown-refined .dropdown-menu {
+  border-radius: 0.375rem;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+
+.dropdown-refined .dropdown-item:hover {
+    background-color: #ffd95e;
+    color: #654100;
+}
+
+/* Các mục trong menu */
+.dropdown-refined .dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+}
+
+/* Mục đang được chọn (active) */
+.dropdown-refined .dropdown-item.active,
+.dropdown-refined .dropdown-item:active {
+
+    background-color: #ffe9a7;
+    color: #654100;
+
+}
+
+/* Biểu tượng check cho mục active */
+.dropdown-refined .check-icon {
+  display: none;
+  /* Mặc định ẩn dấu check */
+  color: var(--primary-color);
+}
+
+.dropdown-refined .dropdown-item.active .check-icon {
+  display: inline-block;
+  /* Hiện dấu check khi mục active */
+}
+
+
+
+/* CSS TÙY CHỈNH CHO BẢNG ĐIỂM */
+
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Tiêu đề bảng */
+.score-table thead th {
+  background-color: #f8f9fa;
+  text-align: center;
+  font-size: 18px;
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+}
+
+/* Các ô trong bảng */
+.score-table td {
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  vertical-align: middle;
+}
+
+/* Tiêu đề của mỗi phần kỹ năng (ví dụ: Số đến 3) */
+.section-header {
+  background-color: #ffd95e;
+  ;
+  /* Màu nền vàng nhạt */
+  font-weight: bold;
+  font-size: 22px;
+  color: #654100;
+}
+
+/* Căn giữa nội dung các cột điểm, số câu, ngày */
+.score-table .text-center {
+  text-align: center;
+}
+
+/* CSS cho dropdown để giống trong hình hơn */
+.results-dropdown .btn {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  color: #495057;
+  font-weight: 500;
+  padding: .375rem 1rem;
+}
+
+.results-dropdown .btn:hover,
+.results-dropdown .btn:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25);
+}
+
+.cell-content {
+  color: black;
+
+}
+
+.btn-custom {
+  background-color: #f1f1f1;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  align-items: center;
+}
+
+.btn-custom:hover {
+  background-color: #e0e0e0;
+  /* hiệu ứng hover nhẹ */
+}
+
+
 
 .speaker-arrow {
   position: absolute;
@@ -79,6 +437,7 @@
   font-size: 30px;
   font-weight: bold;
 }
+
 .services-area .card {
   border: none;
   border-radius: 8px;
@@ -235,6 +594,10 @@
     max-width: 100%;
     text-align: center;
   }
+
+
+
+
 
 
 }
