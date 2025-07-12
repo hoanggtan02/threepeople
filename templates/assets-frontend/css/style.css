@@ -482,6 +482,10 @@ p {
     padding-right: 0px;
     height: 120px;
   }
+
+  .logo {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -489,6 +493,10 @@ p {
     padding-left: 15px;
     padding-right: 15px;
     height: 110px;
+  }
+
+  .logo {
+    display: none;
   }
 }
 
@@ -505,6 +513,10 @@ p {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header-area .header-top .header-logo form {
     margin-left: 20px;
+  }
+
+  .logo {
+    display: none;
   }
 }
 
